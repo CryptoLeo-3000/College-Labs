@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>JQuery Session 9</title>
+
+    <style>
+        ul {
+            margin-left: 20px;
+            color: blue;
+        }
+
+        li {
+            cursor: default;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li class="fade">Item 4</li>
+        <li class="fade">Item 5</li>
+    </ul>
+
+    <script>
+        $("li").hover(
+            function() {
+                $(this).append($("<span>***</span>"));
+            }, function() {
+                $(this).find("span").last().remove();
+            }
+        );
+
+        $("li.fade").hover(function() {
+            $(this).fadeOut(100);
+            $(this).fadeIn(500);
+        });
+    </script>
+</body>
+</html>

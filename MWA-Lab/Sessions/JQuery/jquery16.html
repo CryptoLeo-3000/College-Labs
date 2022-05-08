@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Session 16</title>
+    <style>
+        p {
+            color: red;
+            margin: 4px;
+        }
+
+        b {
+            color: blue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <select id="single">
+        <option>Single</option>
+        <option>Double</option>
+        <option>Triple</option>
+    </select>
+
+    <script>
+        function displayVals() {
+            var singleValues = $("#single").val();
+            $("p").html("<b>Value: </b>" + singleValues);
+        }
+        $("select").change(displayVals);
+        displayVals();
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Session 18</title>
+</head>
+<body>
+    <button onclick="document.getElementById('d1').innerHTML = Date()">The time is?</button>
+    <p id="d1"></p>
+
+    <button onmouseover="display()" onmouseout="displayout()">Over Me</button>
+    <p id="d2"></p>
+
+    <script>
+        function display() {
+            document.getElementById('d2').innerHTML = "mouse over";
+        }
+
+        function displayout() {
+            document.getElementById('d2').innerHTML = "mouse out";
+        }
+    </script>
+</body>
+</html>

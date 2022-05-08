@@ -1,0 +1,10 @@
+The page has 5 controls:
+1. Text
+2. Checkbox
+3. Password
+4. Submit
+5. Cancel
+
+On clicking submit button on a new h1 tag display total characters in password.
+When press cancel check checkbox value selected or not. Also change checkbox item color.
+When press submit button 3rd time. Copy text on new p tag.

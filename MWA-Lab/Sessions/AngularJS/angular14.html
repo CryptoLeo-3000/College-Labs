@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Session 14</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <form ng-submit="myFunc()">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <p>{{myTxt}}</p>
+    <p>ng-submit example</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.myTxt = "Nothing is submitted.";
+            $scope.myFunc = function() {
+                $scope.myTxt = "Submit button clicked successfully.";
+            }
+        });
+    </script>
+</body>
+</html>

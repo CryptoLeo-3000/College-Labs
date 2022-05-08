@@ -1,0 +1,35 @@
+body {
+    background-color: aliceblue;
+}
+
+div {
+    background-color: whitesmoke;
+	box-sizing: border-box;
+	width: 50%;
+	border: 5px solid black;
+	align-content: center;
+	align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.demos {
+    color: red;
+}
+
+.buttons {
+    width: 10%;
+}
+
+.buttons:hover {
+    background-color: aliceblue;
+}

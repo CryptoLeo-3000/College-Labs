@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>JQuery Commands</title>
+</head>
+<body>
+    <h1 class="h1-changecolor">Click here to change color</h1>
+
+    <p class="p-changedouble">Double click here</p>
+
+    <h1 class="h1-mousehover">Hover mouse here</h1>
+
+    <p class="p-mouseenter">Enter mouse here</p>
+
+    <h1 class="enterandleave">ENter and leave</h1>
+
+    <script>
+    $(document).ready(function(){
+        $(".h1-changecolor").click(function(){
+            $(".h1-changecolor").css("color", "yellow");
+        });
+    });
+
+    $(document).ready(function(){
+        $(".p-changedouble").dblclick(function(){
+            $(".p-changedouble").css("color", "green");
+        });
+    });
+
+    $(".h1-mousehover").hover(function(){
+        $(this).css("color", "blue");
+    }, function(){
+        $(this).css("color", "black");
+    });
+
+    $(".p-mouseenter").mouseenter(function(){
+        $(".p-mouseenter").css("color", "aqua");
+    });
+
+    $(".enterandleave").mouseleave(function(){
+        $(".enterandleave").css("color", "gray");
+    });
+    </script>
+</body>
+</html>

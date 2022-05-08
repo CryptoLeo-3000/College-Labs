@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Session 21</title>
+</head>
+<body>
+    <p>This event uses the addEventListener() method to attach a "load" event to an iframe element.</p>
+    
+    <iframe src="https://www.youtube.com/embed/dN2JO_rt7IM" id="myFrame"></iframe>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById('myFrame').addEventListener('load', myFunction());
+
+        function myFunction() {
+            document.getElementById('demo').innerHTML = 'Iframe is loaded';
+        }
+    </script>
+</body>
+</html>

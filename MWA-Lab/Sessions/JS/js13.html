@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Session 13</title>
+</head>
+<body>
+    <p>
+        Click the button to do a global (g), multiline (m), case insensitive (i) search for "is" at the beginning of each line in a string.
+    </p>
+
+    <button onclick="myFunction()">Try It</button>
+
+    <p id="strdisp">Input string is: </p>
+    <p id="demo">Regular Expression result: </p>
+
+    <script>
+        function myFunction() {
+            var str = "\nIs th\nis h\nis?";
+            document.getElementById("strdisp").innerHTML += str;
+
+            var patt1 = /is/gim;
+            var result = str.match(patt1);
+
+            document.getElementById("demo").innerHTML += result
+        }
+    </script>
+</body>
+</html>

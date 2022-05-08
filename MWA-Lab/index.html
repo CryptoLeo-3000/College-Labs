@@ -1,0 +1,250 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: 
+    <br>
+    <input type="text">
+    <br>
+    Account Number: 
+    <br>
+    <input type="text">
+    <br>
+    Balance: 
+    <br>
+    <input type="number" name="" id="balance">
+    <br>
+    <br>
+    <button onclick="SubmitBalance()">Submit</button>
+    <br>
+
+
+    <hr>
+    <input type="number" name="" id="balance-display">
+    <br>
+    <br>
+    <hr>
+
+    Deposit: 
+    <br>
+    <input type="number" id="depositamount">
+    <br>
+    <br>
+    <button onclick="DepositAmount()">Deposit</button>
+    <br>
+    <br>
+    Withdraw: 
+    <br>
+    <input type="number" id="withdrawamount">
+    <br>
+    <br>
+    <button onclick="WithdrawAmount()">Withdraw</button>
+    <br>
+    <br>
+    <button onclick="CheckAmount()">Check Balance</button>
+    <br>
+    <br>
+
+    Outstanding balance:
+    <p id="balanceleft"></p>
+
+    <script>
+
+        function SubmitBalance() {
+            var bal = Number(document.getElementById("balance").value);
+            document.getElementById("balance-display").value = bal;
+        }
+
+        function DepositAmount() {
+            var bal = Number(document.getElementById("balance-display").value);
+            var deposit = Number(document.getElementById("depositamount").value);
+            document.getElementById("balance-display").value = bal + deposit;
+        }
+
+        function WithdrawAmount() {
+            var bal = Number(document.getElementById("balance-display").value);
+            var withdraw = Number(document.getElementById("withdrawamount").value);
+            document.getElementById("balance-display").value = bal - withdraw;
+        }
+
+        function CheckAmount() {
+            var bal = Number(document.getElementById("balance-display").value);
+            document.getElementById("balanceleft").innerHTML = bal;
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>    
+<html lang="en">    
+<head>
+<title>val demo</title>    
+  <style>
+  p {    
+    color: red;    
+    margin: 4px;    
+  }    
+  
+  b {    
+    color: blue;    
+  }    
+  </style>    
+  <script src="Sessions/JQuery/jquery.js"></script>    
+</head>    
+<body>
+    <p></p>
+    <select id="single">    
+        <option>Single</option>    
+        <option>Double</option>    
+        <option>Triple</option>    
+    </select>
+
+    <script>
+    function displayVals() {
+        var singleValues = $( "#single" ).val();
+        $( "p" ).html( "<b>Value:</b> " + singleValues);
+    }
+    $( "select" ).change( displayVals );    
+    displayVals();    
+    </script>    
+</body>    
+</html>  -->
+
+<!-- <!DOCTYPE html>  
+<html>  
+<head>  
+<script src="Sessions/JQuery/jquery.js"></script>  
+<script>  
+$(document).ready(function(){  
+    $("button").click(function(){  
+        $("p:first").addClass("intro");  
+    });  
+});  
+</script>
+<style>  
+.intro {  
+    font-size: 200%;  
+    color: red;  
+}  
+</style>  
+</head>  
+<body>  
+<h1>This is a heading</h1>  
+<p>This is a paragraph.</p>  
+<p>This is another paragraph.</p>  
+<button>Add a class name to the first p element</button>  
+</body>  
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ID: <input type="text" id="id">
+    Name: <input type="text" name="" id="name">
+    Email ID: <input type="text" name="" id="emailid">
+    Password: <input type="text" id="password">
+    <p id="demo"></p>
+    <button onclick="formaction()">Submit</button>
+
+    <script>
+        function formaction() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var emailid = document.getElementById("emailid").value;
+            var password = document.getElementById("password").value;
+
+            if(isNaN(id))
+            document.getElementById("demo").innerHTML = "Numbers only";
+
+            else if(!name.match(/[a-z]/i))
+            document.getElementById("demo").innerHTML = "Letters only";
+
+            else if(!emailid.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+            document.getElementById("demo").innerHTML = "Email IDs only";
+
+            else if(password.length < 8 || password.length > 15)
+            document.getElementById("demo").innerHTML = "Password should be between 8 and 15 characters";
+
+            else if(!password.match(/[A-Z]/))
+            document.getElementById("demo").innerHTML = "No uppercase found in password";
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number 1: <input type="number" name="" id="number1">
+    <br>
+    Number 2: <input type="number" name="" id="number2">
+    <br>
+    Number 3: <input type="number" name="" id="number3">
+    <br>
+    <button onclick="numberaction()">Submit</button>
+    <hr>
+    <p id="demo"></p>
+
+    <script>
+        function numberaction() {
+            var n1 = document.getElementById("number1").value;
+            var n2 = document.getElementById("number2").value;
+            var n3 = document.getElementById("number3").value;
+
+            if(n1 < 0 || n2 < 0 || n3 < 0)
+            document.getElementById("demo").innerHTML = "Enter only number";
+            else {
+                const newarray = [n1, n2, n3];
+                document.getElementById("demo").innerHTML = newarray.sort(function(a, b){return a - b});
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter n: <input type="number" name="" id="nvalue">
+    <button onclick="hihello()">Submit</button>
+
+    <script>
+        function hihello() {
+            var n = document.getElementById("nvalue").value;
+            var i;
+
+            for(i=1; i<=n; i++) {
+                if(i % 3 == 0 && i % 5 == 0)
+                document.write(i + "hi hello" + "<br>");
+                else if(i % 5 == 0)
+                document.write(i + "hello" + "<br>");
+                else if(i % 3 == 0)
+                document.write(i + "hi" + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

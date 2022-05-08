@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Session 20</title>
+    <script src="jquery.js"></script>
+    <script>
+        function fun() {
+            $(document).ready(function() {
+                $("#div1").find("ul").css({
+                    "font-size": "30px",
+                    "color": "blue",
+                    "border": "6px dashed blue"
+                });
+            });
+        }
+    </script>
+    <style>
+        .main * {
+            display: block;
+            font-size: 20px;
+            position: relative;
+            border: 2px solid black;
+            color: black;
+            padding: 10px;
+            margin: 17px;
+        }
+    </style>
+</head>
+<body class="main">
+    Body
+    <div id="div1">div 1
+        <div>div 2
+            <h2>Heading 2
+                <ul>ul
+                    <p>Para Element</p>
+                </ul>
+            </h2>
+        </div>
+    </div>
+
+    <button onclick="fun()"> Click Me </button>
+</body>
+</html>
