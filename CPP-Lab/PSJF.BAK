@@ -1,0 +1,103 @@
+#include<iostream.h>
+#include<conio.h>
+
+int n;
+struct process
+ {
+  int pid;
+  int bt;
+  int at;
+  int ct;
+  int tat;
+  int wt;
+ };
+
+void TurnAroundTime(process proc[])
+ {
+  for (int i = 0; i < n; i++)
+   proc[i].tat = proc[i].bt + proc[i].wt;
+ }
+
+void WaitingTime(process proc[])
+ {
+  int rt[50];
+  for(int i = 0; i<n; i++)
+   rt[i] = proc[i].bt;
+  int complete = 0, t = 0, min = 1;
+  int shortest = 0, finish_time, check = 1;
+  while(complete != n)
+   {
+    for(int j = 0; j<n; j++)
+     {
+      if ((proc[j].at <= t) && (rt[j] < min) && rt[j] > 0)
+       {
+	min = rt[j];
+	shortest = j;
+	check = 0;
+      }
+   }
+  if(check == 1)
+   {
+    t++;
+    continue;
+   }
+  rt[shortest]--;
+  min = rt[shortest];
+  if(min == 0)
+   min = 1;
+  if (rt[shortest] == 0)
+   {
+    complete++;
+    check = 1;
+    finish_time = t + 1;
+    proc[shortest].wt = finish_time - proc[shortest].bt - proc[shortest].at;
+    if(proc[shortest].wt < 0)
+     proc[shortest].wt = 0;
+   }
+  t++;
+ }
+}
+
+void AvgTime(process proc[])
+ {
+  float total_wt = 0, total_tat = 0;
+  WaitingTime(proc);
+  TurnAroundTime(proc);
+  cout<<"Processes "<<" Burst time "<<" Waiting time "<<" Turn around time"<<endl;
+  for(int i=0; i<n; i++)
+   {
+    total_wt = total_wt + proc[i].wt;
+    total_tat = total_tat + proc[i].tat;
+    cout<<" "<<proc[i].pid<<"\t\t"<<proc[i].bt<<"\t\t "<<proc[i].wt<<"\t\t "<<proc[i].tat<<endl;
+   }
+  cout<<"\nAverage waiting time = "<<total_wt/n;
+  cout<<"\nAverage turn around time = "<<total_tat/n;
+ }
+
+void main()
+ {
+  clrscr();
+  process pr[50];
+  cout<<"Enter number of processes to be entered"<<endl;
+  cin>>n;
+
+  for(int i=0; i<n; i++)
+   pr[i].pid = i;
+
+  cout<<"Enter arrival time for each process"<<endl;
+  for(i=0; i<n; i++)
+   {
+    cout<<"Arrival TIme for process "<<i<<" : "<<endl;
+    cin>>pr[i].at;
+   }
+
+  cout<<"Enter burst time for each process"<<endl;
+  for(i=0; i<n; i++)
+   {
+    cout<<"Burst time for process "<<i<<" : "<<endl;
+    cin>>pr[i].bt;
+   }
+
+   AvgTime(pr);
+   getch();
+}

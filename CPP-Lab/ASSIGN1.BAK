@@ -1,0 +1,103 @@
+#include <iostream.h>
+#include<conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/*Question 1
+void main()
+ {
+  clrscr();
+  int n1, n2, n3;
+  cout<< "Enter number 1: "<<endl;
+  cin>>n1;
+  cout<< "Enter number 2: "<<endl;
+  cin>>n2;
+  cout<< "Enter number 3: "<<endl;
+  cin>>n3;
+
+  if(n1 >= n2 && n1 >= n3)
+   cout<<"Largest number: "<<n1<<endl;
+  else if(n2 >= n1 && n2 >= n3)
+   cout<<"Largest number: "<<n2<<endl;
+  else
+   cout<<"Largest number: "<<n3<<endl;
+
+  getch();
+ }
+*/
+
+/*Question 2
+void main()
+ {
+  clrscr();
+  int n, fact=1;
+  cout<<"Enter a number:"<<endl;
+  cin>>n;
+
+  for(int i = 1; i<=n; i++)
+   fact *= i;
+
+  cout<<"Factorial of "<<n<<" = "<<fact<<endl;
+  getch();
+ }
+*/
+
+/*Question 3*/
+
+void main()
+ {
+  clrscr();
+  int randomNumber, m, n;
+  cout<<"Enter lower range:"<<endl;
+  cin>>m;
+  cout<<"Enter upper range"<<endl;
+  cin>>n;
+  srand((unsigned) time(0));
+  randomNumber = rand() % n;
+  cout<<randomNumber<<endl;
+  getch();
+ }
+
+/*Question 4
+int calculate(int base, int power)
+ {
+  if (power != 0)
+   return (base*calculate(base, power-1));
+  else
+   return 1;
+ }
+
+void main()
+ {
+  clrscr();
+  int a, b, res;
+  cout<<"Enter base number: ";
+  cin>>a;
+  cout<<"Enter power number(positive integer): ";
+  cin>>b;
+  res = calculate(a, b);
+  cout<<a<<"^"<<b<<" = "<<res;
+  getch();
+}
+*/
+
+/*Question5
+void avgmarks(int a, int b, int c)
+ {
+  cout<<"Average marks of the student = "<<(a+b+c)/3<<endl;
+ }
+
+void main()
+ {
+  clrscr();
+  float m1, m2, m3;
+  cout<<"Enter marks in subject1: "<<endl;
+  cin>>m1;
+  cout<<"Enter marks in subject2: "<<endl;
+  cin>>m2;
+  cout<<"Enter marks in subject3: "<<endl;
+  cin>>m3;
+  avgmarks(m1, m2, m3);
+  getch();
+}
+*/

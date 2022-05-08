@@ -1,0 +1,18 @@
+#include<iostream.h>
+#include<conio.h>
+
+#define simpleinterest(p, r, t) cout<<"Interest on the amount = "<<(p*r*t)/100;
+
+void main()
+ {
+  clrscr();
+  double principal, rate, time;
+  cout<<"Enter Principal amount"<<endl;
+  cin>>principal;
+  cout<<"Enter the Rate of Interest"<<endl;
+  cin>>rate;
+  cout<<"Enter Time"<<endl;
+  cin>>time;
+  simpleinterest(principal, rate, time);
+  getch();
+ }

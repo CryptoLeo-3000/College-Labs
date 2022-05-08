@@ -1,0 +1,99 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+using namespace std;
+class customer
+{
+    protected:
+        int custid,accno,bal,lnno,lnamt;
+        char custnm[50];
+    public:
+        void getdat()
+        {
+            cout<<"\nEnter Name of Customer: ";
+            gets(custnm);
+        }
+        void display()
+        {
+            cout<<"\nCustomer Name: "<<custnm;
+        }
+};
+class depositor:public customer
+{
+    int add_accno,add_bal;
+    public:
+    void getdat()
+    {
+        cout<<"\nEnter your account number where you have to deposit the amount:";
+        cin>>add_accno;
+        accno = add_accno;
+        cout<<"\nEnter the money you want to deposit:";
+        cin>>add_bal;
+        bal = add_bal;
+    }
+    void display()
+    {
+        cout<<"\nAccount Number: "<<accno;
+        cout<<"\n\nMoney Deposited: "<<bal;
+    }
+};
+class borrower:public customer
+{
+    int add_lnno,add_lnamt;
+    public:
+    void getdat()
+    {
+        cout<<"\nEnter your loan number:";
+        cin>>add_lnno;
+        lnno = add_lnno;
+        cout<<"\nEnter the loan money you want:";
+        cin>>add_lnamt;
+        lnamt = add_lnamt;
+    }
+    void display()
+    {
+        cout<<"\nLoan Number: "<<lnno;
+        cout<<"\n\nLoan Amount: "<<lnamt;
+    }
+};
+int main()
+ {
+  depositor d;
+  borrower b;
+  int x;
+  cout<<"Enter your role as:";
+  cout<<"\n1. Depositor";
+  cout<<"\n2. Borrower";
+  cout<<"\nEnter the number 1 or 2:";
+  cin>>x;
+  if(x == 1)
+  {
+      cout<<"\t Data Input";
+      d.customer::getdat();
+      d.getdat();
+  }
+  else if(x == 2)
+  {
+      cout<<"\t Data Input";
+      b.customer::getdat();
+      b.getdat();
+  }
+  else
+  {
+      cout<<"Plz enter a proper input !!!!!!!!!!!!!!!!!";
+  }
+  if(x == 1)
+  {
+      cout<<"\t Data Output";
+      d.customer::display();
+      d.display();
+  }
+  else if(x == 2)
+  {
+      cout<<"\t Data Output";
+      b.customer::display();
+      b.display();
+  }
+  return 0;
+ }
+ 

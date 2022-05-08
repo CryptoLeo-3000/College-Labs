@@ -1,0 +1,29 @@
+#include<iostream.h>
+#include<conio.h>
+#include<ctype.h>
+void main()
+ {
+   clrscr();
+   char grade;
+   cout<<"Enter Grade A-F"<<endl;
+   cin>>grade;
+   char grades = grade.toupper();
+
+   switch(grades)
+    {
+     case 'A':cout<<"Excellent"<<endl;
+     break;
+     case 'B':cout<<"Very Good"<<endl;
+     break;
+     case 'C':cout<<"Good"<<endl;
+     break;
+     case 'D':cout<<"Average"<<endl;
+     break;
+     case 'E':cout<<"Okay"<<endl;
+     break;
+     case 'F':cout<<"Fail"<<endl;
+     break;
+     default:cout<<"Enter a proper grade"<<endl;
+    }
+   getch();
+ }

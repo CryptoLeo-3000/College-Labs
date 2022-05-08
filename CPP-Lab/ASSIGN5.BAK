@@ -1,0 +1,110 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+/* Question 1
+class Student
+ {
+  char name[20], div;
+  int roll, id, m1, m2, m3;
+  float avg;
+
+  public:
+  void accept_details()
+   {
+    cout<<"Enter your name:"<<endl;
+    gets(name);
+    cout<<"Enter Roll Number:"<<endl;
+    cin>>roll;
+    cout<<"Enter Division:"<<endl;
+    cin>>div;
+    cout<<"Enter ID:"<<endl;
+    cin>>id;
+    cout<<"Enter marks of Subject 1"<<endl;
+    cin>>m1;
+    cout<<"Enter marks of Subject 2"<<endl;
+    cin>>m2;
+    cout<<"Enter marks of Subject 3"<<endl;
+    cin>>m3;
+   }
+  void average_marks()
+   {
+    avg = (m1+m2+m3)/3;
+   }
+  void display_details()
+   {
+    cout<<"Name: "<<name<<endl;
+    cout<<"Roll No.: "<<roll<<endl;
+    cout<<"Division: "<<div<<endl;
+    cout<<"ID: "<<id<<endl;
+    cout<<"Marks in Subject 1: "<<m1<<endl;
+    cout<<"Marks in Subject 2: "<<m2<<endl;
+    cout<<"Marks in Subject 3: "<<m3<<endl;
+    cout<<"Average Marks: "<<avg<<endl;
+   }
+ };
+
+void main()
+ {
+  clrscr();
+  Student s1, s2;
+  cout<<"Enter details for Student 1"<<endl<<endl;
+  s1.accept_details();
+  cout<<"Enter details for Student 2"<<endl<<endl;
+  s2.accept_details();
+
+  s1.average_marks();
+  s2.average_marks();
+
+  cout<<"Student 1 Details:"<<endl<<endl;
+  s1.display_details();
+  cout<<"Student 2 Details:"<<endl;
+  s2.display_details();
+  getch();
+ }
+*/
+
+/* Question 2*/
+class Employee
+ {
+  int emp_id, emp_sal, emp_work;
+
+  public:
+  void getInfo()
+   {
+    cout<<"Enter Employee ID:"<<endl;
+    cin>>emp_id;
+    cout<<"Enter Salary of Employee:"<<endl;
+    cin>>emp_sal;
+    cout<<"Enter Number of Work hours of Employee:"<<endl;
+    cin>>emp_work;
+   }
+  void AddSal()
+   {
+    if(emp_sal < 500)
+     emp_sal += 10;
+   }
+  void AddWork()
+   {
+    if(emp_work > 6)
+     emp_sal += 5;
+   }
+  void display_details()
+   {
+    cout<<"Employee ID: "<<emp_id<<endl;
+    cout<<"Employee Salary: "<<emp_sal<<endl;
+    cout<<"Employee Work Done (in hours): "<<emp_work<<endl;
+   }
+ };
+
+void main()
+ {
+  clrscr();
+  Employee e;
+  e.getInfo();
+  e.AddSal();
+  e.AddWork();
+  clrscr();
+  e.display_details();
+  getch();
+ }

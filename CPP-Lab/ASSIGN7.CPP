@@ -1,0 +1,91 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+#include<stdio.h>
+#include<exception.h>
+
+/* Question 1
+class complex
+ {
+  public:
+  int real, img;
+  complex()
+   {
+   }
+  complex(int r, int i)
+   {
+    real = r;
+    img = i;
+   }
+  complex add_complex(complex c1, complex c2)
+   {
+    complex t;
+    t.real = c1.real+c2.real;
+    t.img = c1.img+c2.img;
+    return t;
+   }
+ };
+
+void main()
+ {
+  clrscr();
+  complex c1(4, 5);
+  complex c2(7, 1);
+  complex c3;
+  c3 = c3.add_complex(c1, c2);
+  cout<<"First Complex: "<<c1.real<<"+i"<<c1.img<<endl;
+  cout<<"Second Complex: "<<c2.real<<"+i"<<c2.img<<endl;
+  cout<<"Final Complex: "<<c3.real<<"+i"<<c3.img<<endl;
+  getch();
+ }
+*/
+
+/* Question 2
+
+int main()
+ {
+  clrscr();
+  int n;
+  cout<<"Enter a number"<<endl;
+  cin>>n;
+  try
+   {
+    if(n < 0)
+     {
+      throw n;
+     }
+    else
+     cout<<"Square root of "<<n<<" = "<<sqrt(n)<<endl;
+   }
+  catch(float x)
+   {
+    cout<<"Square root of "<<x<<" not possible"<<endl;
+   }
+  return 0;
+ }
+*/
+
+/* Question 3
+
+int main()
+ {
+  clrscr();
+  int age;
+  cout<<"Enter your age"<<endl;
+  cin>>age;
+  try
+   {
+    if(age < 18)
+     {
+      throw age;
+     }
+    else
+     cout<<"You are eligible for voting"<<endl;
+   }
+  catch(int x)
+   {
+    cout<<"You are not eligible for voting"<<endl;
+   }
+  return 0;
+ }
+*/

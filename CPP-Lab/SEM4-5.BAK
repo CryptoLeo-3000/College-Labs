@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<conio.h>
+int process[]={0, 1, 2, 3}, bt[]={7, 6, 2, 4}, qtm=2, wt[4], tat[4],
+total_wt=0, total_tat=0;
+
+void findturnaroundtime()
+ {
+ }
+
+void findwaitingtime()
+ {
+  int rem_bt[4], t=0;
+  for(int i=0; i<4; i++)
+   rem_bt[i] = bt[i];
+
+  while(1)
+   {
+
+   }
+ }
+
+void main()
+ {
+  clrscr();
+  findwaitingtime();
+  findturnaroundtime();
+  getch();
+ }

@@ -1,0 +1,23 @@
+#include<iostream.h>
+#include<conio.h>
+void power(int a, int b)
+ {
+  static prod = 1;
+   if( b > 0 )
+    {
+     prod *= a;
+    }
+   b--;
+   power(a, b);
+ }
+void main()
+ {
+   clrscr();
+   int x, y;
+   cout<<"Enter value of x:\n";
+   cin>>x;
+   cout<<"Enter value of y:\n";
+   cin>>y;
+   power(x, y);
+   getch();
+ }

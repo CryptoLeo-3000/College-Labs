@@ -1,0 +1,33 @@
+#include<iostream.h>
+#include<conio.h>
+void volume(int a)
+ {
+  cout<<"Volumne of Cube: "<<a*a*a<<endl;
+ }
+ void volume(int r, int h)
+  {
+   cout<<"Volume of cylinder: "<<3.14*r*r*h<<endl;
+  }
+ void volume(double r, double h)
+  {
+   cout<<"Volume of Cone: "<<(3.14*r*r*h)/3<<endl;
+  }
+void main()
+ {
+  clrscr();
+
+  int a, r, h;
+  double radius, height;
+  cout<<"Enter sides of cube:"<<endl;
+  cin>>a;
+  volume(a);
+
+  cout<<"Enter Radius and height for cylinder"<<endl;
+  cin>>r>>h;
+  volume(r, h);
+
+  cout<<"Enter Radius and height for cone"<<endl;
+  cin>>radius>>height;
+  volume(radius, height);
+  getch();
+ }

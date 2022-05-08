@@ -1,0 +1,79 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+
+void sem_wait(int &a)
+{
+if(a>0)
+{
+a--;
+}
+}
+
+void sem_signal(int &a)
+{
+a++;
+}
+
+void main()
+{
+clrscr();
+
+int rc=0, mutex=1, db=1, ch, array[50],r=0,w=0,i,j;
+
+while(1)
+ {
+  cout<<"\n\n1.Reader wants to enter\t\t2.Reader wants to leave\n3.Writer wants to enter\t\t4.Writer wants to leave\n5.Show current status\t\t6.Exit";
+  cout<<"\nEnter your choice: ";
+  cin>>ch;
+
+  switch(ch)
+   {
+    case 1:sem_wait(mutex);
+	   rc++;
+	   if(rc==1)
+	    sem_wait(db);
+
+	   sem_signal(mutex);
+	   cout<<"Inside: ";
+	   for(i=1;i<=rc;i++)
+	    cout<<"Reader "<<i<<",";
+    break;
+    case 2:sem_wait(mutex);
+	   cout<<"Reader "<<rc<<" has left";
+	   rc--;
+
+	   if(rc==0)
+	    sem_signal(db);
+
+	   sem_signal(mutex);
+	   break;
+    case 3:if(db==0)
+	    {
+	     cout<<"Another writer cannot enter";
+	     break;
+	    }
+
+	   cout<<"Writer is inside";
+	   cout<<db;
+
+	   sem_wait(db);
+	   break;
+    case 4:if(db==0)
+	    {
+	     cout<<"Writer ha left"<<endl;
+	     sem_signal(db);
+	    }
+	   else
+	    cout<<"No writer left"<<endl;
+    break;
+    case 6: exit(0);
+	    break;
+
+
+
+default: cout<<"Wrong choice";
+}
+}
+getch();
+}

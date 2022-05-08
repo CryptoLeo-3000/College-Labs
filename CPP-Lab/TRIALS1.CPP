@@ -1,0 +1,32 @@
+#include<iostream.h>
+#include<conio.h>
+class qualification
+ {
+  float marks;
+
+  public:
+   qualification(float m)
+    {
+     marks = m;
+    }
+   friend void job(qualification q);
+ };
+
+void job(qualification q)
+ {
+  if(q.marks >= 80)
+   cout<<"Congratulations you are eligible for the job"<<endl;
+  else
+   cout<<"Sorry! Do better next time"<<endl;
+ }
+
+void main()
+ {
+  clrscr();
+  float marks;
+  cout<<"Enter your graduation marks"<<endl;
+  cin>>marks;
+  qualification qual(marks);
+  job(qual);
+  getch();
+ }
