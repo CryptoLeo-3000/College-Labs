@@ -1,3 +1,8 @@
+def decrypt(char):
+    for i in cipher:
+        if cipher[i] == char:
+            return i
+
 cipher = {
     'a': 'm',
    'b': 'n',
@@ -40,6 +45,22 @@ for i in range(len(plain_text)):
 
     cipher_text += cipher_word
 
-print("/n/n")    
+print("\nEncryption:\n")
 print(f"Plain Text: {plain_text}")
 print(f"Cipher text: {cipher_text}")
+
+plain_text = ""
+
+for i in range(len(cipher_text)):
+    char = cipher_text[i]
+    if char.isupper():
+        char = char.lower()
+        plain_word = decrypt(char).upper()
+    else:
+        plain_word = decrypt(char)
+
+    plain_text += plain_word
+
+print("\nDecryption:\n")
+print(f"Cipher text: {cipher_text}")
+print(f"Plain Text: {plain_text}")
